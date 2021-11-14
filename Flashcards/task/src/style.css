@@ -1,17 +1,22 @@
-.flashcards-container {
+.cards-container {
   border-radius: 6px;
-  display: flex;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
+  /* display: flex;
   flex-flow: wrap;
   justify-content: space-between;
-  align-content: space-around;
+  align-content: space-around; */
   height: 90vmin;
   width: 90vmin;
   margin: auto;
   vertical-align: middle;
   padding: 3px;
+  /*background-color: red;*/
 }
 
-.flashcard {
+.card {
   background-color: rgba(179, 228, 224, .9);
   margin: 3px;
   border-radius: 10px;
@@ -20,8 +25,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30%;
-  width: 30%;
+  height: 30vmin;
+  width: 30vmin;
+  /* height: 300px;
+  width: 300px; */
+  transition: all 2s ease;
+              /* opacity 2s ease 1s; */
+  transform-style: preserve-3d;
+  /* opacity: .7; */
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+  /* opacity: 1; */
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.back {
+  transform: rotateY(180deg);
 }
 
 .quiz-area {
@@ -31,8 +60,52 @@
   justify-content: center;
 }
 
+/*.mexico {*/
+/*  background-image: url("pictures/mexico.png");*/
+/*  background-size: cover;*/
+/*  background-repeat: no-repeat;*/
+/*}*/
+
+/*.papua {*/
+/*  background-image: url("pictures/papua_new_guinea.png");*/
+/*}*/
+
+/*.iceland {*/
+/*  background-image: url("pictures/iceland.png");*/
+/*}*/
+
+/*.korea {*/
+/*  background-image: url("pictures/korea_south.png");*/
+/*}*/
+
+/*.sweden {*/
+/*  background-image: url("pictures/sweden.png");*/
+/*}*/
+
+/*.georgia {*/
+/*  background-image: url("pictures/georgia.png");*/
+/*}*/
+
+/*.honduras {*/
+/*  background-image: url("pictures/honduras.png");*/
+/*}*/
+
+/*.tunisia {*/
+/*  background-image: url("pictures/tunisia.png");*/
+/*}*/
+
+/*.austria {*/
+/*  background-image: url("pictures/austria.png");*/
+/*}*/
+
+/*.tegucigalpa {*/
+/*  background-image: url("pictures/tegucigalpa.jpg");*/
+/*  background-size: cover;*/
+/*}*/
+
+
 body {
-  background-image: url("https://nadatodai.com/wp-content/uploads/2019/10/Screen-Shot-2019-10-07-at-12.12.45.png");
+  background-image: url("pictures/world.png");
   background-size: cover;
   font-family: 'Mochiy Pop One', sans-serif;
 }
